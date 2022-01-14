@@ -9,6 +9,8 @@ const Display = (props) => {
     }
 
     const handleDelete = (i) => {
+        // received the idx from delete clicked
+        // sent to app.js
         props.itemDelete(i);
     }
 
@@ -30,6 +32,7 @@ const Display = (props) => {
                             // onClick works on if <checkbox></checkbox>
                             // when the click happen we sent the index to the function
                             onChange={() => handleChecked(i)}/>
+                            {/* once the delete click we sent the idx over */}
                             <button onClick={() => handleDelete(i)} className='btn btn-danger'>Delete</button>
                         </li>
                     )
