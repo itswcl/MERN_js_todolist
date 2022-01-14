@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Display = (props) => {
 
@@ -14,8 +14,11 @@ const Display = (props) => {
         props.itemDelete(i);
     }
 
+
     return (
+
         <ul class="list-group">
+            {JSON.stringify(props.localStorage)}
             {
                 props.list.map((item, i) => {
                     return (

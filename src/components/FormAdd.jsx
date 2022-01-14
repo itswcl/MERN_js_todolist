@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const FormAdd = (props) => {
     // set item with default false done
@@ -13,7 +13,10 @@ const FormAdd = (props) => {
             title: e.target.value,
             done: false,
         })
+
     }
+
+
 
     // once submit
     const handleSubmit = (e) => {
@@ -26,7 +29,12 @@ const FormAdd = (props) => {
             ...item,
             title: ""
         })
+
     }
+
+    // useEffect(() => {
+    //     localStorage.setItem(item.title, JSON.stringify(item.title))
+    // })
 
     return (
         <div className='d-flex justify-content-center'>
@@ -35,13 +43,13 @@ const FormAdd = (props) => {
                 <div className='col'>
                     <labe>Enter Item</labe>
                     <input
-                    // when input change to the item and click add item
-                    onChange={addItem}
-                    className='form-control'
-                    type='text'
-                    name='title'
-                    // default value as empty and update once type in
-                    value={item.title}
+                        // when input change to the item and click add item
+                        onChange={addItem}
+                        className='form-control'
+                        type='text'
+                        name='title'
+                        // default value as empty and update once type in
+                        value={item.title}
                     />
                 </div>
                 <button className="btn btn-success my-2">Add</button>

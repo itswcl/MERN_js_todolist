@@ -16,6 +16,7 @@ function App() {
       ...list,
       { title: itemTitle, done: done }
     ])
+
   }
 
   const itemUpdate = (idx) => {
@@ -41,7 +42,6 @@ function App() {
 
   return (
     <div className="App">
-      {JSON.stringify(list)}
       {/* sent the main function */}
       {/* with key onNewItem in FormAdd.jx */}
       <FormAdd onNewItem={itemReceived} />
