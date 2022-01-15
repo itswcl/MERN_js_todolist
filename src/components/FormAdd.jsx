@@ -22,6 +22,8 @@ const FormAdd = (props) => {
     const handleSubmit = (e) => {
         // prevent refresh
         e.preventDefault();
+        // before make the call we prevent empty string input
+        if (item.title.length === 0) return;
         // call the function from app.js file to add to main list
         props.onNewItem(item.title, item.done)
         // clear out the input

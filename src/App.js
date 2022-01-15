@@ -37,6 +37,12 @@ function App() {
       list.slice(0, idx)
         // wit the element from the idx after so idx + 1
         .concat(list.slice(idx + 1));
+
+    // Another way to do the delete, filter out the target index
+    // const newList = list.filter((item, i) => {
+    //   return i !== idx;
+    // })
+
     setList(newList);
   }
 
