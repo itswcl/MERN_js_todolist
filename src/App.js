@@ -25,6 +25,19 @@ function App() {
     let newList = [...list];
     // 2. update item.done if false checked to true or true checked to false
     newList[idx].done ? newList[idx].done = false : newList[idx].done = true
+
+    // Another way to do update
+    // newList based on list
+    // const newList2 = list.map((todo, i) => {
+    //   // if the item idx meet
+    //   if (idx === i) {
+    //     // update the done to opposite
+    //     return { ...todo, done: !todo.done }
+    //   }
+    //   // if not meet we dont change
+    //   return todo;
+    // })
+
     // 3. set the newList to the list
     setList(newList)
   }
