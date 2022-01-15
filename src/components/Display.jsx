@@ -23,10 +23,6 @@ const Display = (props) => {
                 props.list.map((item, i) => {
                     return (
                         <li className="list-group-item d-flex align-items-center" key={i}>
-                            {/* update label based on the checkbox (true/false) */}
-                            <label
-                                className={item.done ? "text-decoration-line-through" : ""}
-                            >{item.title}</label>
                             <input
                             className="form-check-input mx-2"
                             type="checkbox"
@@ -35,6 +31,10 @@ const Display = (props) => {
                             // onClick works on if <checkbox></checkbox>
                             // when the click happen we sent the index to the function
                             onChange={() => handleChecked(i)}/>
+                            {/* update label based on the checkbox (true/false) */}
+                            <label
+                                className={item.done ? "text-decoration-line-through" : ""}
+                            >{item.title}</label>
                             {/* once the delete click we sent the idx over */}
                             <button onClick={() => handleDelete(i)} className='btn btn-danger'>Delete</button>
                         </li>
