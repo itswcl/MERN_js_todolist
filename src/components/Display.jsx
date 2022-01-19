@@ -24,13 +24,14 @@ const Display = (props) => {
                     return (
                         <li className="list-group-item d-flex align-items-center" key={i}>
                             <input
-                            className="form-check-input mx-2"
-                            type="checkbox"
-                            // default as false as the item not done yet
-                            checked={item.done}
-                            // onClick works on if <checkbox></checkbox>
-                            // when the click happen we sent the index to the function
-                            onChange={() => handleChecked(i)}/>
+                                className="form-check-input mx-2"
+                                type="checkbox"
+                                // no value for checkbox to set default so we use checked
+                                // default as false as the item not done yet
+                                checked={item.done}
+                                // onClick works on if <checkbox></checkbox>
+                                // when the click happen we sent the index to the function
+                                onChange={() => handleChecked(i)} />
                             {/* update label based on the checkbox (true/false) */}
                             <label
                                 className={item.done ? "text-decoration-line-through" : ""}

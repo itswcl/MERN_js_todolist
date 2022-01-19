@@ -25,6 +25,7 @@ function App() {
     let newList = [...list];
     // 2. update item.done if false checked to true or true checked to false
     newList[idx].done ? newList[idx].done = false : newList[idx].done = true
+    // this work to update opposite boolean newList[idx].done = !newList[idx].done
 
     // Another way to do update
     // newList based on list
@@ -50,11 +51,13 @@ function App() {
       list.slice(0, idx)
         // wit the element from the idx after so idx + 1
         .concat(list.slice(idx + 1));
+    // or setList(list.slice(0,idx).concat(list.slice(idx+1)))
 
     // Another way to do the delete, filter out the target index
     // const newList = list.filter((item, i) => {
     //   return i !== idx;
     // })
+
 
     setList(newList);
   }
